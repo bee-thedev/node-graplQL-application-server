@@ -34,6 +34,21 @@ app.post('/', function (req, res) {
   res.send('Got a POST request')
 })
 
+app.get('/users/:userId/books/:bookId', function (req, res) {
+  res.send(req.params)    //when we use params we basically get an object on our page 
+                          //from client's response
+})
+
+app.get('/flights/:from-:to', function (req, res) {
+  res.send(req.params)    //for params use: aA - zZ and 0-9, also . and -
+                          
+})
+
+app.get('/plantae/:genus.:species', function (req, res) {
+  res.send(req.params)    //for params use: aA - zZ and 0-9, also . and -
+                          
+})
+
 app.all('/secret', function (req, res, next) {
   console.log('Accessing the secret section ...')
   next() // pass control to the next handler
