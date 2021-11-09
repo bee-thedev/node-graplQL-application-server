@@ -1,15 +1,22 @@
-import {users} from '../Mock_Data'
+// import { post } from 'got';
+import {users,posts} from '../Mock_Data'
 import { pubsub } from './index';
 
 export const resolvers = {
     Query: {
         getAllUsers() {
             return users;
+        },
+        getAllPosts(){
+            return posts;
         }
+        // getAllPosts(){
+        //     return posts[2]; // For a particular post
+        // }
     },
     Mutation: {
         createUser(parent, args) {
-            const newUser = args;
+            const newUser = args; // in args : name, age , married
             users.push(newUser);
             pubsub.publish('TRIGGER_NEW_USER', { newUser });
             return newUser

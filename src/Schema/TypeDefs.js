@@ -9,9 +9,17 @@ export const typeDefs = gql`
         married: Boolean!
     }
 
+    type Post {
+        name: String!
+        id: String!
+        description: String!
+    }
+
+
 # Queries
     type Query {
         getAllUsers: [User!]!
+        getAllPosts: [Post!]! 
     }
     
 

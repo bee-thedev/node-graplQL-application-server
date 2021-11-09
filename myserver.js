@@ -106,3 +106,6 @@ app.get('/blog', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
+//GET method can be tested on Browser while for PUT/POST/DELETE use postman(for testing api)
